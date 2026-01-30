@@ -6,40 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    /* ... (Keep existing styles from previous contact.html) ... */
+    
     body {
       margin: 0;
       font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       background: #f7f7f7;
       color: #222;
       line-height: 1.7;
-      letter-spacing: 0.2px;
     }
 
     header {
-      background:
-        linear-gradient(rgba(11,44,77,0.75), rgba(11,44,77,0.75)),
-        url("bannner1.jpg") center/cover no-repeat;
+      background: linear-gradient(rgba(11,44,77,0.75), rgba(11,44,77,0.75)), url("bannner1.jpg") center/cover no-repeat;
       color: white;
       padding: 90px 20px;
       text-align: center;
     }
 
-    nav {
-      background: #0b2c4d;
-      padding: 12px 0;
-      text-align: center;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
+    nav { background: #0b2c4d; padding: 12px 0; text-align: center; }
+    nav a { color: #fff; margin: 0 15px; text-decoration: none; font-weight: 500; }
 
     section {
       max-width: 900px;
@@ -50,71 +35,37 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
 
-    h2 {
-      color: #0b2c4d;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
-      margin-bottom: 20px;
-    }
+    h2 { color: #0b2c4d; border-bottom: 2px solid #ddd; padding-bottom: 8px; margin-bottom: 20px; }
 
-    .contact-info {
-      margin-bottom: 30px;
-    }
-
-    .contact-info p {
-      margin: 10px 0;
-    }
-
-    .highlight {
-      font-weight: bold;
-      color: #0b2c4d;
-    }
-
-    form {
-      display: grid;
-      gap: 15px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      font-family: inherit;
-      box-sizing: border-box;
-    }
-
-    button {
-      background: #0b2c4d;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 500;
-      width: fit-content;
-    }
-
-    button:hover {
-      background: #164370;
-    }
-
-    footer {
-      background: #222;
-      color: #ccc;
+    /* QR Code Styling */
+    .qr-container {
       text-align: center;
       padding: 20px;
-      margin-top: 50px;
-      font-size: 14px;
+      background: #f9f9f9;
+      border: 1px dashed #0b2c4d;
+      border-radius: 6px;
+      margin-top: 20px;
     }
+
+    .qr-code {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+
+    .qr-text {
+      font-size: 14px;
+      color: #555;
+      display: block;
+    }
+
+    /* ... (Rest of your form and footer styles) ... */
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Contact Us</h1>
-</header>
+<header><h1>Contact Us</h1></header>
 
 <nav>
   <a href="index.html">Home</a>
@@ -126,29 +77,16 @@
 <section>
   <h2>Office Information</h2>
   <div class="contact-info">
-    <p><span class="highlight">Address:</span> 4A, 2nd Floor, Mozang Road, Lahore. </p>
-    <p><span class="highlight">Phone:</span> +92 312 0043 244</p>
-    <p><span class="highlight">Email:</span> m.usman.at.law@gmail.com</p>
+    <p><strong>Address:</strong> Islamabad, Pakistan</p>
+    <p><strong>Phone:</strong> [Insert Phone Number]</p>
+    <p><strong>Email:</strong> [Insert Email Address]</p>
+  </div>
+
+  <div class="qr-container">
+    <img src="qr_contact.png" alt="Scan to Save Contact" class="qr-code">
+    <span class="qr-text">Scan this QR code to save my contact details directly to your phone.</span>
   </div>
 </section>
 
-<section>
-  <h2>Legal Inquiry</h2>
-  <p>To schedule a consultation regarding property litigation or civil matters, please use the form below.</p>
-  
-  <form action="#" method="post">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <input type="text" name="subject" placeholder="Subject (e.g., Property Dispute)">
-    <textarea name="message" rows="5" placeholder="Brief description of your legal matter" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
-</section>
-
-<footer>
-  © 2026 Advocate Muhammad Usman — Property Litigation & Civil Law
-</footer>
-
 </body>
 </html>
-
