@@ -91,22 +91,32 @@
       color: #0b2c4d;
     }
 
+    /* WhatsApp Floating Button Styling */
     .whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 60px;
-  height: 60px;
-  background-color: #25d366;
-  border-radius: 50px;
-  text-align: center;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 1000;
-}
-.whatsapp-float img {
-  width: 35px;
-  margin-top: 12px;
-}
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #25d366;
+      border-radius: 50px;
+      text-align: center;
+      box-shadow: 2px 2px 3px #999;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
   </style>
 </head>
 
@@ -118,10 +128,10 @@
 </header>
 
 <nav>
-  <a href="/">Home</a>
-  <a href="/about.html">About</a>
-  <a href="/practice.html">Practice</a>
-  <a href="/contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="practice.html">Practice</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
 <section>
@@ -159,6 +169,10 @@
     <li>Injunction Matters</li>
   </ul>
 </section>
+
+<a href="https://wa.me/920000000000?text=Hello,%20I%20would%20like%20to%20inquire%20about%20legal%20services." class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
 <footer>
   © 2026 Advocate Muhammad Usman — Property Litigation & Civil Law
