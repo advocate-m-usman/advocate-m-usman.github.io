@@ -17,7 +17,7 @@
     header {
       background:
         linear-gradient(rgba(11,44,77,0.75), rgba(11,44,77,0.75)),
-        url("bannner1.jpg") center/cover no-repeat;
+        url("dp.jpg") center/cover no-repeat;
       color: white;
       padding: 90px 20px;
       text-align: center;
@@ -52,6 +52,21 @@
       margin-bottom:20px;
     }
 
+    /* Headshot Styling */
+    .profile-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .headshot {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%; /* Makes it circular */
+      border: 4px solid #0b2c4d;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
     footer {
       background:#222;
       color:#ccc;
@@ -76,6 +91,10 @@
 </nav>
 
 <section>
+  <div class="profile-container">
+    <img src="headshot.jpg" alt="Advocate Muhammad Usman" class="headshot">
+  </div>
+
   <h2>Professional Background</h2>
   <p>
     Advocate Muhammad Usman is a practicing civil lawyer with a focused
@@ -105,5 +124,3 @@
 
 </body>
 </html>
-
-
