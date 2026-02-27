@@ -1,125 +1,317 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Advocate Muhammad Usman | Property Litigation Lawyer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=2.0">
-
+  <title>Advocate Muhammad Usman | Property Litigation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-      background: #f7f7f7;
-      color: #222;
-      line-height: 3.0;
-      letter-spacing: 0.2px;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    :root {
+      --dark-bg: #1a1a1a;
+      --darker-bg: #0f0f0f;
+      --carbon-dark: #242424;
+      --carbon-medium: #383838;
+      --accent-gold: #c9a961;
+      --accent-light: #e8e8e8;
+      --text-primary: #f5f5f5;
+      --text-secondary: #c0c0c0;
+      --border-subtle: #3a3a3a;
+    }
+
+    body {
+      font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      letter-spacing: 0.4px;
+    }
+
+    /* HEADER WITH GRADIENT BACKGROUND */
     header {
-      background:
-        linear-gradient(rgba(11,44,77,0.75), rgba(11,44,77,0.75)),
-        url("bannner1.jpg") center/cover no-repeat;
-      color: white;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #242424 100%);
       padding: 90px 20px;
       text-align: center;
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(201, 169, 97, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 38px;
-      letter-spacing: 1px;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      line-height: 1.1;
     }
 
     header p {
-      font-size: 18px;
-      margin-top: 10px;
-      opacity: 0.95;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      letter-spacing: 1.5px;
+      font-weight: 300;
+      text-transform: uppercase;
     }
 
+    /* NAVIGATION */
     nav {
-      background:#0b2c4d;
-      padding:12px 0;
-      text-align:center;
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a, #0f0f0f);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(8px);
+      background-color: rgba(15, 15, 15, 0.9);
     }
 
     nav a {
-      color:#fff;
-      margin:0 15px;
-      text-decoration:none;
-      font-weight:500;
+      color: var(--text-secondary);
+      margin: 0 24px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      display: inline-block;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      transition: width 0.3s ease;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--accent-gold);
     }
 
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* SECTIONS */
     section {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: white;
-      padding: 35px;
-      border-radius: 6px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      max-width: 880px;
+      margin: 60px auto;
+      background: linear-gradient(135deg, var(--carbon-dark) 0%, #2a2a2a 100%);
+      padding: 50px 45px;
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent-gold);
+      position: relative;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent-gold) 0%, transparent 100%);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     h2 {
-      color: #0b2c4d;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 8px;
-      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+      margin-bottom: 24px;
+      letter-spacing: 1px;
+      font-weight: 700;
     }
 
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 8px;
-    }
-
-    footer {
-      background: #222;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-      margin-top: 50px;
-      font-size: 14px;
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.8;
     }
 
     .highlight {
-      font-weight: bold;
-      color: #0b2c4d;
+      color: var(--accent-gold);
+      font-weight: 500;
+      border-bottom: 1px solid var(--accent-gold);
+      padding-bottom: 2px;
     }
 
-    /* WhatsApp Floating Button Styling */
+    /* LISTS */
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    ul li {
+      padding-left: 24px;
+      margin-bottom: 14px;
+      position: relative;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    ul li::before {
+      content: '▪';
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    /* WHATSAPP BUTTON */
     .whatsapp-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 30px;
+      right: 30px;
       width: 60px;
       height: 60px;
       background-color: #25d366;
-      border-radius: 50px;
-      text-align: center;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 1000;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: transform 0.3s ease;
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+      z-index: 1000;
+      transition: all 0.3s ease;
+      text-decoration: none;
     }
 
     .whatsapp-float:hover {
-      transform: scale(1.1);
+      transform: scale(1.12);
+      box-shadow: 0 12px 32px rgba(37, 211, 102, 0.4);
     }
 
     .whatsapp-float img {
-      width: 35px;
-      height: 35px;
+      width: 32px;
+      height: 32px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(to right, var(--darker-bg), var(--dark-bg));
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      margin-top: 80px;
+    }
+
+    footer a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent-light);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 0.9rem;
+      }
+
+      nav a {
+        margin: 0 12px;
+        font-size: 0.75rem;
+      }
+
+      section {
+        margin: 40px 16px;
+        padding: 35px 25px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      ul li {
+        padding-left: 20px;
+        margin-bottom: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 60px 16px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+      }
+
+      nav {
+        padding: 12px 0;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 0.7rem;
+      }
+
+      section {
+        margin: 30px 12px;
+        padding: 28px 20px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 18px;
+      }
     }
   </style>
 </head>
-
 <body>
 
 <header>
@@ -137,10 +329,7 @@
 <section>
   <h2>Professional Focus</h2>
   <p>
-    Advocate Muhammad Usman specializes in
-    <span class="highlight">property litigation and civil disputes</span>,
-    focusing on statutory interpretation, procedural accuracy,
-    and effective judicial remedies.
+    Advocate Muhammad Usman specializes in <span class="highlight">property litigation and civil disputes</span>, with a focus on statutory interpretation, procedural accuracy, and effective judicial remedies. With a comprehensive understanding of property law frameworks and civil procedure, he provides strategic representation for complex matters involving ownership, possession, and contractual enforcement.
   </p>
 </section>
 
@@ -160,81 +349,23 @@
 <section>
   <h2>Nature of Suits Handled</h2>
   <ul>
-    <li>Title Suits</li>
+    <li>Title & Ownership Disputes</li>
     <li>Partition Suits</li>
-    <li>Possession & Recovery</li>
-    <li>Specific Performance</li>
+    <li>Possession & Recovery Suits</li>
+    <li>Specific Performance of Contracts</li>
     <li>Declaratory Suits</li>
-    <li>Cancellation of Instruments</li>
-    <li>Injunction Matters</li>
+    <li>Cancellation & Rectification of Documents</li>
+    <li>Permanent & Temporary Injunctions</li>
   </ul>
 </section>
 
-<a href="https://wa.me/923120043244?text=Hello,%20I%20would%20like%20to%20inquire%20about%20legal%20services." class="whatsapp-float" target="_blank">
+<a href="https://wa.me/923120043244?text=Hello,%20I%20would%20like%20to%20inquire%20about%20legal%20services." class="whatsapp-float" target="_blank" title="Contact via WhatsApp">
   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
 </a>
 
 <footer>
-  © 2026 Advocate Muhammad Usman — Property Litigation & Civil Law
+  © 2026 Advocate Muhammad Usman — Property Litigation & Civil Law Specialist
 </footer>
 
-</body>
-</html> -->
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Advocate Muhammad Usman | Property Litigation</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body { margin: 0; font-family: "Garamond", "Georgia", serif; background: #f4f1ea; color: #1a1a1a; line-height: 1.8; }
-    header { background: linear-gradient(rgba(5, 25, 45, 0.85), rgba(5, 25, 45, 0.85)), url("bannner1.jpg") center/cover no-repeat; color: #d4af37; padding: 100px 20px; text-align: center; border-bottom: 4px solid #d4af37; }
-    header h1 { font-size: 2.8rem; letter-spacing: 3px; text-transform: uppercase; margin: 0; }
-    header p { font-size: 1.2rem; letter-spacing: 2px; opacity: 0.9; margin-top: 10px; }
-    nav { background: #05192d; padding: 18px 0; text-align: center; position: sticky; top: 0; z-index: 1000; }
-    nav a { color: #d4af37; margin: 0 20px; text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; transition: 0.3s; }
-    nav a:hover { color: #fff; }
-    section { max-width: 900px; margin: -40px auto 60px; background: white; padding: 50px; border-radius: 2px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); border-top: 5px solid #05192d; }
-    h2 { color: #05192d; border-bottom: 1px solid #d4af37; padding-bottom: 10px; margin-bottom: 25px; font-size: 1.8rem; }
-    .highlight { font-weight: bold; color: #05192d; border-bottom: 1px solid #d4af37; }
-    ul li { margin-bottom: 12px; list-style-type: none; border-left: 3px solid #d4af37; padding-left: 15px; }
-    .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #25d366; border-radius: 50px; text-align: center; box-shadow: 2px 5px 15px rgba(0,0,0,0.2); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
-    .whatsapp-float:hover { transform: scale(1.1); }
-    .whatsapp-float img { width: 35px; height: 35px; }
-    footer { background: #05192d; color: #d4af37; text-align: center; padding: 40px; font-size: 0.9rem; }
-  </style>
-</head>
-<body>
-<header>
-  <h1>Advocate Muhammad Usman</h1>
-  <p>Property Litigation & Civil Law Specialist</p>
-</header>
-<nav>
-  <a href="index.html">HOME</a>
-  <a href="about.html">ABOUT</a>
-  <a href="practice.html">PRACTICE</a>
-  <a href="contact.html">CONTACT</a>
-</nav>
-<section>
-  <h2>Professional Focus</h2>
-  <p>Advocate Muhammad Usman specializes in <span class="highlight">property litigation and civil disputes</span>, focusing on statutory interpretation, procedural accuracy, and effective judicial remedies.</p>
-</section>
-<section>
-  <h2>Statutory Legal Framework</h2>
-  <ul>
-    <li>Transfer of Property Act</li>
-    <li>Contract Act</li>
-    <li>Specific Relief Act</li>
-    <li>Code of Civil Procedure (CPC)</li>
-    <li>Limitation Act</li>
-  </ul>
-</section>
-<a href="https://wa.me/923120043244" class="whatsapp-float" target="_blank">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-</a>
-<footer>© 2026 Advocate Muhammad Usman — High Court Advocate</footer>
 </body>
 </html>

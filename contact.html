@@ -4,161 +4,409 @@
   <meta charset="UTF-8">
   <title>Contact | Advocate Muhammad Usman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Lato:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: "Garamond", "Georgia", serif; /* Elegant serif font for a legal look */
-      background: #f4f1ea; /* Subtle parchment-style background */
-      color: #1a1a1a;
-      line-height: 1.8;
+      padding: 0;
+      box-sizing: border-box;
     }
 
+    :root {
+      --dark-bg: #1a1a1a;
+      --darker-bg: #0f0f0f;
+      --carbon-dark: #242424;
+      --carbon-medium: #383838;
+      --accent-gold: #c9a961;
+      --accent-light: #e8e8e8;
+      --text-primary: #f5f5f5;
+      --text-secondary: #c0c0c0;
+      --border-subtle: #3a3a3a;
+    }
+
+    body {
+      font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      letter-spacing: 0.4px;
+    }
+
+    /* HEADER */
     header {
-      /* Deep Navy with a more sophisticated overlay */
-      background: linear-gradient(rgba(5, 25, 45, 0.85), rgba(5, 25, 45, 0.85)), url("bannner1.jpg") center/cover no-repeat;
-      color: #d4af37; /* Gold text */
-      padding: 120px 20px;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #242424 100%);
+      padding: 90px 20px;
       text-align: center;
-      border-bottom: 4px solid #d4af37;
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(201, 169, 97, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(201, 169, 97, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    header > * {
+      position: relative;
+      z-index: 1;
     }
 
     header h1 {
-      font-size: 3rem;
-      letter-spacing: 3px;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--accent-gold);
+      margin-bottom: 8px;
       text-transform: uppercase;
-      margin: 0;
+      line-height: 1.1;
     }
 
-    nav { 
-      background: #05192d; 
-      padding: 20px 0; 
-      text-align: center;
+    header p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      letter-spacing: 1.5px;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+
+    /* NAVIGATION */
+    nav {
+      background: linear-gradient(to right, #0f0f0f, #1a1a1a, #0f0f0f);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-subtle);
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 999;
+      backdrop-filter: blur(8px);
+      background-color: rgba(15, 15, 15, 0.9);
     }
-    
-    nav a { 
-      color: #d4af37; 
-      margin: 0 20px; 
-      text-decoration: none; 
-      font-weight: 600; 
+
+    nav a {
+      color: var(--text-secondary);
+      margin: 0 24px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
       letter-spacing: 1px;
-      transition: color 0.3s ease;
+      text-transform: uppercase;
+      transition: all 0.3s ease;
+      display: inline-block;
+      position: relative;
     }
 
-    nav a:hover { color: #fff; }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gold);
+      transition: width 0.3s ease;
+    }
 
+    nav a:hover {
+      color: var(--accent-gold);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* SECTIONS */
     section {
-      max-width: 800px;
-      margin: -50px auto 60px; /* Overlaps header slightly for modern look */
-      background: white;
-      padding: 50px;
-      border-radius: 2px; /* Sharp corners for professional look */
-      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-      border-top: 5px solid #05192d;
+      max-width: 880px;
+      margin: 60px auto;
+      background: linear-gradient(135deg, var(--carbon-dark) 0%, #2a2a2a 100%);
+      padding: 50px 45px;
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent-gold);
+      position: relative;
+      animation: fadeInUp 0.8s ease 0.2s both;
     }
 
-    h2 { 
-      color: #05192d; 
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 40px;
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent-gold) 0%, transparent 100%);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+      margin-bottom: 32px;
       letter-spacing: 1px;
+      font-weight: 700;
+      text-align: center;
     }
 
+    /* CONTACT INFO GRID */
     .contact-info {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
+      gap: 40px;
       margin-bottom: 40px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 30px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-subtle);
     }
 
-    .info-item { text-align: center; }
+    .info-item {
+      text-align: center;
+      animation: fadeInUp 0.8s ease 0.3s both;
+    }
 
-    .highlight { 
+    .info-label {
       display: block;
-      color: #d4af37; 
-      font-weight: bold; 
-      text-transform: uppercase; 
-      font-size: 0.9rem;
-      margin-bottom: 5px;
+      color: var(--accent-gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
     }
 
-    /* Elegant QR Styling */
+    .info-content {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.6;
+    }
+
+    .info-content a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .info-content a:hover {
+      color: var(--accent-light);
+      border-bottom: 1px solid var(--accent-gold);
+    }
+
+    /* QR SECTION */
     .qr-wrapper {
       text-align: center;
       padding: 40px;
-      background: #fbfbfb;
-      border: 1px solid #e0e0e0;
-      margin-top: 30px;
+      background: linear-gradient(135deg, rgba(201, 169, 97, 0.05) 0%, transparent 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    .qr-label {
+      display: block;
+      color: var(--accent-gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
     }
 
     .qr-code {
-      width: 280px; /* Perfectly balanced size */
+      width: 280px;
       height: 280px;
-      border: 8px solid white;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 8px solid var(--carbon-dark);
       border-radius: 4px;
-      transition: transform 0.3s ease;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin: 0 auto;
     }
-    
-    .qr-code:hover { transform: scale(1.02); }
+
+    .qr-code:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 50px rgba(201, 169, 97, 0.2);
+    }
 
     .qr-text {
-      margin-top: 25px;
-      font-size: 1.1rem;
-      color: #05192d;
+      margin-top: 24px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
       font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(to right, var(--darker-bg), var(--dark-bg));
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      margin-top: 80px;
+    }
+
+    footer a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: var(--accent-light);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      nav a {
+        margin: 0 12px;
+        font-size: 0.75rem;
+      }
+
+      section {
+        margin: 40px 16px;
+        padding: 35px 25px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .contact-info {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .qr-code {
+        width: 240px;
+        height: 240px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 60px 16px;
+      }
+
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        margin: 0 8px;
+        font-size: 0.7rem;
+      }
+
+      section {
+        margin: 30px 12px;
+        padding: 28px 20px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 24px;
+      }
+
+      .contact-info {
+        gap: 24px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+      }
+
+      .qr-wrapper {
+        padding: 30px 20px;
+      }
+
+      .qr-code {
+        width: 200px;
+        height: 200px;
+      }
     }
   </style>
 </head>
-
 <body>
 
 <header>
-    <h1>Advocate Muhammad Usman</h1>
-    <p style="font-size: 1.2rem; letter-spacing: 2px;">High Court</p>
+  <h1>Advocate Muhammad Usman</h1>
+  <p>Get in Touch</p>
 </header>
 
 <nav>
-  <a href="index.html">HOME</a>
-  <a href="about.html">ABOUT</a>
-  <a href="practice.html">PRACTICE AREAS</a>
-  <a href="contact.html">CONTACT</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="practice.html">Practice</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
 <section>
-  <h2>Office Information</h2>
+  <h2>Contact Information</h2>
   
   <div class="contact-info">
     <div class="info-item">
-        <span class="highlight">Address</span>
-        4A, 2nd Floor, Mozang Road, Lahore
+      <span class="info-label">Address</span>
+      <div class="info-content">
+        4A, 2nd Floor<br>
+        Mozang Road<br>
+        Lahore, Pakistan
+      </div>
     </div>
+
     <div class="info-item">
-        <span class="highlight">Phone</span>
-        +92 312 0043 244
+      <span class="info-label">Phone</span>
+      <div class="info-content">
+        <a href="tel:+923120043244">+92 312 0043 244</a>
+      </div>
     </div>
-    <div style="grid-column: span 2; margin-top: 15px;" class="info-item">
-        <span class="highlight">Email</span>
-        m.usman.at.law@gmail.com
+
+    <div class="info-item">
+      <span class="info-label">Email</span>
+      <div class="info-content">
+        <a href="mailto:m.usman.at.law@gmail.com">m.usman.at.law@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="info-item">
+      <span class="info-label">WhatsApp</span>
+      <div class="info-content">
+        <a href="https://wa.me/923120043244?text=Hello,%20I%20would%20like%20to%20inquire%20about%20legal%20services." target="_blank">Direct Message</a>
+      </div>
     </div>
   </div>
 
   <div class="qr-wrapper">
-    <img src="qr_contact.jpg" alt="Scan to Save Contact" class="qr-code">
+    <span class="qr-label">Save Contact</span>
+    <img src="qr_contact.jpg" alt="Scan to Save Contact Details" class="qr-code">
     <p class="qr-text">
-      Scan to instantly save my contact details to your mobile device.
+      Scan this QR code to instantly save contact details to your mobile device.
     </p>
   </div>
 </section>
 
-<footer style="text-align: center; padding: 40px; color: #777; font-size: 0.9rem;">
-    &copy; 2026 Advocate Muhammad Usman. All Rights Reserved.
+<footer>
+  © 2026 Advocate Muhammad Usman — Property Litigation Specialist
 </footer>
 
 </body>
